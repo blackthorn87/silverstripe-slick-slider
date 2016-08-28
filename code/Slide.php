@@ -83,6 +83,8 @@ if (!class_exists('Slide'))
 		
 			$fields = parent::getCMSFields();
 			
+			$fields->removeByName('sImage');
+
 			$fields->addFieldsToTab (
 				'Root.Main',
 				array (
@@ -100,6 +102,15 @@ if (!class_exists('Slide'))
 			{
 				$fields->removeByName('sImage');
 				$fields->removeByName('PageLink');
+				$fields->removeByName('PageLinkID');
+				$fields->removeByName('ParentPage');
+
+				$fields->addFieldsToTab (
+					'Root.Main',
+					array (
+						LiteralField::create('lit1')->setContent('<em>You\'ll be able to add an image after creating the slide.</em>')
+					)
+				);
 			}
 
 			if ($this->ID > 0)
@@ -122,6 +133,20 @@ if (!class_exists('Slide'))
 			}
 			
 			return $fields;
+		}
+
+		public function targetDestination()
+		{
+			return $this->openInNew ? " target=\"_blank\"" : "";
+		}
+
+		public function Link()
+		{
+			if ($this->OtherLink) {
+				return $this->OtherLink;
+			} else {
+				return $this->PageLink()->Link();
+			}
 		}
 		
 		

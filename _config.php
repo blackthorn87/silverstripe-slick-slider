@@ -5,4 +5,7 @@
 // Add Slider Functionality to all Pages
 Object::add_extension('Page', 'SliderExtension');
 
+// Extend Page_Controller with the SlideList
+Object::add_extension('Page_Controller', 'SliderController');
+
 ?>
