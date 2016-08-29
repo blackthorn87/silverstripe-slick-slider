@@ -8,7 +8,17 @@ if (!class_exists('SliderConfig'))
 
 		private static $db = array (
 
-			'SlickSliderUseCss'		=> 'Boolean'
+			'SlickSliderUseCss'		=> 'Boolean',
+			'SlickSliderUseJs'		=> 'Boolean',
+			'SlickSliderUseJquery'	=> 'Boolean'
+
+		);
+
+		private static $defaults = array (
+
+			'SlickSliderUseCss'		=> true,
+			'SlickSliderUseJs'		=> true,
+			'SlickSliderUseJquery'	=> true
 
 		);
 
@@ -21,9 +31,16 @@ if (!class_exists('SliderConfig'))
 					'slider_settings',
 					'Slider Settings',
 					array (
+						LiteralField::create('','<div class="field"><p>If you aren\'t customsing any these elements or including them in more advanced methods, you\'ll need to make sure each one is active. For more information on these settings view the <a href="https://github.com/blackthorn87/silverstripe-slick-slider" target="_blank">README</a>.</p></div>'),
 						CheckBoxField::create('SlickSliderUseCss')
-							->setTitle('Use Module Styles')
-							->setDescription('This will turn off using the included styles which tidy up the look of the slider. It does not turn off the standard slick slider styles.')
+							->setTitle('Use Styles')
+							->setDescription('Turn styles on or off.'),
+						CheckBoxField::create('SlickSliderUseJs')
+							->setTitle('Use JS Configuration')
+							->setDescription('Turn JS configuration on or off.'),
+						CheckBoxField::create('SlickSliderUseJquery')
+							->setTitle('Use jQuery')
+							->setDescription('Use jquery from the CDN.'),
 					)
 				)
 			);

@@ -10,7 +10,9 @@ if (!class_exists('SliderController'))
 		public function onAfterInit()
 		{
 
-			$config = SiteConfig::current_site_config()->SlickSliderUseCss;
+			$configUseCss = SiteConfig::current_site_config()->SlickSliderUseCss;
+			$configUseJs = SiteConfig::current_site_config()->SlickSliderUseJs;
+			$configUseJquery = SiteConfig::current_site_config()->SlickSliderUseJquery;
 
 			$current_theme = "themes/" . SSViewer::current_theme();
 			
@@ -18,28 +20,28 @@ if (!class_exists('SliderController'))
 
 			//Load  CSS requirements
 			Requirements::css("//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css");
-			
-			if ($config == true)
-			{
-
+			if ($configUseCss == true) {
 				// checks the theme directory for the css file first and uses it if it exists
-				if (Director::fileExists($current_theme . "/css/slider.css"))
-				{
+				if (Director::fileExists($current_theme . "/css/slider.css")) {
 					Requirements::css($current_theme . "/css/slider.css");
 				} else {
 					Requirements::css("slider/css/slider.css");
 				}
-
 			}
 
-			if ($this->SlideList()->Count() > 1)
-			{
-			
-				//Load  Javascript requirements
-				Requirements::javascript("//code.jquery.com/jquery-1.11.0.min.js");
+			//Load  Javascript requirements
+			if ($this->SlideList()->Count() > 1) {
+				if ($configUseJquery == true) {
+					Requirements::javascript("//code.jquery.com/jquery-1.11.0.min.js");
+				}
 				Requirements::javascript("//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js");
-				Requirements::javascript("slider/js/slick-config.js");
-
+				if ($configUseJs == true) {
+					if (Director::fileExists($current_theme . "/js/slick-config.js")) {
+						Requirements::javascript($current_theme . "/js/slick-config.js");
+					} else {
+						Requirements::javascript("slider/js/slick-config.js");
+					}
+				}
 			}
 			// Call the blue imp jquery
 			/*
