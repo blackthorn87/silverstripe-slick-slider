@@ -31,6 +31,11 @@ All you need to do is include ```<% include Slider %>``` in your template where 
 
 You can customise the template in the usual SilverStripe fashion (copy it from the modules template directory to your theme directory in the same folder).
 
+#### Adding Slides
+
+- Each page now has a Slider tab
+- You can add and remove slides for the page here
+
 #### Advanced Styling
 
 If you want to override the styles, just include the slick-style.css file in your theme css directory (css/slick-styles.css).
@@ -40,3 +45,7 @@ Alternatively if you're using something like SASS, you can turn off the styles c
 #### Javascript Config
 
 If you need to change the configuration settings for the slider copy the js/slick-config.js to your theme directory. You can change all the settings in here. Reference for the slider can be found [here](http://kenwheeler.github.io/slick/).
+
+###Support
+
+*Note, this module was developed for personal use, experimentation and further learning and development. Please feel free to use it if you wish, but support for the module will be either non existant for the moment, or patchy at best.*
