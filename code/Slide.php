@@ -93,7 +93,7 @@ if (!class_exists('Slide'))
 					TextField::create('OtherLink')->setTitle('Alternative Link')
 						->setDescription('If this field is filled out, the \'Page Link\' won\'t be used.'),
 					CheckBoxField::create('openInNew')->setTitle('Open in New Tab'),
-					CheckBoxField::create('isActive')->setTitle('Enable Link'),
+					CheckBoxField::create('isActive')->setTitle('Enable Slide'),
 					TextField::create('Sort')->setTitle('Sort Order')
 				)
 			);
