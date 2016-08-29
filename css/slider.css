@@ -1,0 +1,56 @@
+
+.slick-wrapper {
+	position: relative;
+}
+.slick-slider .slide-item {
+	position: relative;
+	min-height: 500px;
+}
+.slide-item .main_heading,
+.slide-item .main_content {
+	float: left;
+	clear: left;
+	background-color: rgba(0,0,0,0.6);
+	padding: 1.5rem 2.5rem;
+	color: #fefefe;
+	text-shadow: 1px 1px 0px #000000;
+	font-size: 2rem;
+}
+.slick-wrapper .slick-slider-elements .slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0px, -50%, 0px);
+	width: 2rem;
+	height: 4rem;
+	background-color: rgba(255,255,255,0.35);
+	line-height: 4rem;
+	text-decoration: none;
+}
+.slick-wrapper .slick-slider-elements .slick-arrow span {
+	display: none;
+}
+.slick-wrapper .slick-slider-elements .slick-arrow.slick-prev {
+	left: 0;
+	border-radius: 0 2rem 2rem 0;
+}
+.slick-wrapper .slick-slider-elements .slick-arrow.slick-next {
+	right: 0;
+	border-radius: 2rem  0 0 2rem;
+}
+.slick-wrapper .slick-slider-elements .dots {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.slick-wrapper .slick-slider-elements .dots ul.slick-dots {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+.slick-wrapper .slick-slider-elements .dots ul.slick-dots li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
