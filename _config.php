@@ -8,4 +8,7 @@ Object::add_extension('Page', 'SliderExtension');
 // Extend Page_Controller with the SlideList
 Object::add_extension('Page_Controller', 'SliderController');
 
+// Extend SiteConfig
+Object::add_extension('SiteConfig', 'SliderConfig');
+
 ?>
